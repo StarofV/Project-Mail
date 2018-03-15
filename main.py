@@ -1,12 +1,21 @@
 import smtplib
+import json
 import sys
+
+with open('creds.json', 'r') as f:
+    config = json.load(f)
+	
+user_email = config['login']['email']
+user_password = config['login']['password']
 
 server = smtplib.SMTP('smtp.gmail.com', 587)
 server.starttls()
-server.login("your email here", "the pass of your email here") 
-    
+server.login(user_email, user_password) 
+
+
 def mailer(email, message):
-    server.sendmail("Your email here", email, message)
-    server.quit()
-    print("Job done, program done.")
-mailer(sys.argv[1], sys.argv[2])
+	server.sendmail(user_email, email, message[1:-1])
+	server.quit()
+	print("Job has successfully finished.")
+user_message = str(input("Input what to send for specified email(use quoutation marks): "))
+mailer(sys.argv[1], user_message)
