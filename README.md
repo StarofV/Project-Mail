@@ -1,5 +1,5 @@
 # Project-Mail
-A python software that sends email throughout terminal so that you don't have to login to your Gmail.
+A python software that sends email throughout terminal so that you don't have to login to your Gmail everytime. (Note that this is only for Gmail, and any other domain.)
 
 #### How to set-up?: Cd to the Project-Mail folder, and open creds.json as a text file.
 #### You should see this:
