@@ -17,5 +17,5 @@ def mailer(email, message):
 	server.sendmail(user_email, email, message[1:-1])
 	server.quit()
 	print("Job has successfully finished.")
-user_message = str(input("Input what to send for specified email(use quoutation marks): "))
+user_message = str(input("Input what to send for specified email(use quotation marks): "))
 mailer(sys.argv[1], user_message)
